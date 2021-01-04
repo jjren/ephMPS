@@ -1,0 +1,455 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>11. Calculation Configurations &mdash; Renormalizer 0.1.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="12. lib" href="lib.html" />
+    <link rel="prev" title="10. Frequency domain DMRG" href="cv.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Renormalizer
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="overview.html">1. An overview of Renormalizer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install.html">2. Installation guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="develop.html">3. How to develop Renormalizer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial.html">4. Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="model.html">5. Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mps.html">6. Low Level Data Structure and Algorithms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="static.html">7. Static Eigenstate Method</a></li>
+<li class="toctree-l1"><a class="reference internal" href="spectrum.html">8. spectra: absorption/emission spectrum at zero/finite temperature</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ct.html">9. Charge Transport</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cv.html">10. Frequency domain DMRG</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">11. Calculation Configurations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lib.html">12. lib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sbm.html">13. sbm</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Renormalizer</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li><span class="section-number">11. </span>Calculation Configurations</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/configs.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-renormalizer.utils.configs">
+<span id="calculation-configurations"></span><h1><span class="section-number">11. </span>Calculation Configurations<a class="headerlink" href="#module-renormalizer.utils.configs" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt id="renormalizer.utils.configs.BondDimDistri">
+<em class="property">class </em><code class="sig-prename descclassname">renormalizer.utils.configs.</code><code class="sig-name descname">BondDimDistri</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/renormalizer/utils/configs.html#BondDimDistri"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#renormalizer.utils.configs.BondDimDistri" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/enum.html#enum.Enum" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">enum.Enum</span></code></a></p>
+<p>Bond dimension distribution</p>
+<dl class="py attribute">
+<dt id="renormalizer.utils.configs.BondDimDistri.center_gauss">
+<code class="sig-name descname">center_gauss</code><em class="property"> = 'center gaussian'</em><a class="headerlink" href="#renormalizer.utils.configs.BondDimDistri.center_gauss" title="Permalink to this definition">¶</a></dt>
+<dd><p>Guassian distribution which peaks at the center.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="renormalizer.utils.configs.BondDimDistri.uniform">
+<code class="sig-name descname">uniform</code><em class="property"> = 'uniform'</em><a class="headerlink" href="#renormalizer.utils.configs.BondDimDistri.uniform" title="Permalink to this definition">¶</a></dt>
+<dd><p>uniform distribution.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="renormalizer.utils.configs.CompressConfig">
+<em class="property">class </em><code class="sig-prename descclassname">renormalizer.utils.configs.</code><code class="sig-name descname">CompressConfig</code><span class="sig-paren">(</span><em class="sig-param">criteria: renormalizer.utils.configs.CompressCriteria = &lt;CompressCriteria.threshold: 'threshold'&gt;</em>, <em class="sig-param">threshold: float = 0.001</em>, <em class="sig-param">bonddim_distri: renormalizer.utils.configs.BondDimDistri = &lt;BondDimDistri.uniform: 'uniform'&gt;</em>, <em class="sig-param">max_bonddim: int = 32</em>, <em class="sig-param">vmethod: str = '2site'</em>, <em class="sig-param">vprocedure=None</em>, <em class="sig-param">vrtol=1e-05</em>, <em class="sig-param">vguess_m=(5</em>, <em class="sig-param">5)</em>, <em class="sig-param">dump_matrix_size=inf</em>, <em class="sig-param">dump_matrix_dir='./'</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/renormalizer/utils/configs.html#CompressConfig"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#renormalizer.utils.configs.CompressConfig" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>MPS/MPO Compress Configuration.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>criteria</strong> (<a class="reference internal" href="#renormalizer.utils.configs.CompressCriteria" title="renormalizer.utils.configs.CompressCriteria"><code class="xref any py py-class docutils literal notranslate"><span class="pre">CompressCriteria</span></code></a>, optional) – The criteria for compression. Default is
+<a class="reference internal" href="#renormalizer.utils.configs.CompressCriteria.threshold" title="renormalizer.utils.configs.CompressCriteria.threshold"><code class="xref any py py-attr docutils literal notranslate"><span class="pre">CompressCriteria.threshold</span></code></a>.</p></li>
+<li><p><strong>threshold</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><em>float</em></a><em>, </em><em>optional</em>) – The threshold to keep states if <code class="docutils literal notranslate"><span class="pre">criteria</span></code> is set to
+<a class="reference internal" href="#renormalizer.utils.configs.CompressCriteria.threshold" title="renormalizer.utils.configs.CompressCriteria.threshold"><code class="xref any py py-attr docutils literal notranslate"><span class="pre">CompressCriteria.threshold</span></code></a> or <a class="reference internal" href="#renormalizer.utils.configs.CompressCriteria.both" title="renormalizer.utils.configs.CompressCriteria.both"><code class="xref any py py-attr docutils literal notranslate"><span class="pre">CompressCriteria.both</span></code></a>.
+Default is <span class="math notranslate nohighlight">\(10^{-3}\)</span>.</p></li>
+<li><p><strong>bonddim_distri</strong> (<a class="reference internal" href="#renormalizer.utils.configs.BondDimDistri" title="renormalizer.utils.configs.BondDimDistri"><code class="xref any py py-class docutils literal notranslate"><span class="pre">BondDimDistri</span></code></a>, optional) – Bond dimension distribution if <code class="docutils literal notranslate"><span class="pre">criteria</span></code> is set to
+<a class="reference internal" href="#renormalizer.utils.configs.CompressCriteria.fixed" title="renormalizer.utils.configs.CompressCriteria.fixed"><code class="xref any py py-attr docutils literal notranslate"><span class="pre">CompressCriteria.fixed</span></code></a> or <a class="reference internal" href="#renormalizer.utils.configs.CompressCriteria.both" title="renormalizer.utils.configs.CompressCriteria.both"><code class="xref any py py-attr docutils literal notranslate"><span class="pre">CompressCriteria.both</span></code></a>.
+Default is <a class="reference internal" href="#renormalizer.utils.configs.BondDimDistri.uniform" title="renormalizer.utils.configs.BondDimDistri.uniform"><code class="xref any py py-attr docutils literal notranslate"><span class="pre">BondDimDistri.uniform</span></code></a>.</p></li>
+<li><p><strong>max_bonddim</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><em>int</em></a><em>, </em><em>optional</em>) – Maximum bond dimension <code class="docutils literal notranslate"><span class="pre">M</span></code> under various bond dimension distributions.
+Default is 32.</p></li>
+<li><p><strong>vmethod</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a><em>, </em><em>optional</em>) – <p>The algorithm used in variational compression. The default is <code class="docutils literal notranslate"><span class="pre">2site</span></code>.</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">1site</span></code>:  optimize one site at a time during sweep.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">2site</span></code>:  optimize two site at a time during sweep.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>It is recommended to use the 2site algorithm in variational optimization,
+though 1site algorithm is much cheaper. The reason is that 1site algorithm
+is easy to stuck into local minima while 2site algorithm is more robust. For
+complicated Hamiltonian, the problem is severer.  The renormalized basis
+selection rule used here to partly solve the local minimal problem is
+according to Chan. J.  Chem. Phys. 2004, 120, 3172. For efficiency, you
+could use 2site algorithm for several sweeps and then switch to 1site
+algorithm to converge the final mps.</p>
+</div>
+</p></li>
+<li><p><strong>vprocedure</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.9)"><em>list</em></a><em>, </em><em>optional</em>) – <p>The procedure to do variational compression.
+The Default is</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">vmethod</span> <span class="o">==</span> <span class="s2">&quot;1site&quot;</span><span class="p">:</span>
+    <span class="n">vprocedure</span> <span class="o">=</span> <span class="p">[[</span><span class="n">max_bonddim</span><span class="p">,</span><span class="mf">1.0</span><span class="p">],[</span><span class="n">max_bonddim</span><span class="p">,</span><span class="mf">0.7</span><span class="p">],</span>
+                  <span class="p">[</span><span class="n">max_bonddim</span><span class="p">,</span><span class="mf">0.5</span><span class="p">],[</span><span class="n">max_bonddim</span><span class="p">,</span><span class="mf">0.3</span><span class="p">],</span>
+                  <span class="p">[</span><span class="n">max_bonddim</span><span class="p">,</span><span class="mf">0.1</span><span class="p">]]</span> <span class="o">+</span> <span class="p">[[</span><span class="n">max_bonddim</span><span class="p">,</span><span class="mi">0</span><span class="p">],]</span><span class="o">*</span><span class="mi">10</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">vprocedure</span> <span class="o">=</span> <span class="p">[[</span><span class="n">max_bonddim</span><span class="p">,</span><span class="mf">0.5</span><span class="p">],[</span><span class="n">max_bonddim</span><span class="p">,</span><span class="mf">0.3</span><span class="p">],</span>
+                  <span class="p">[</span><span class="n">max_bonddim</span><span class="p">,</span><span class="mf">0.1</span><span class="p">]]</span> <span class="o">+</span> <span class="p">[[</span><span class="n">max_bonddim</span><span class="p">,</span><span class="mi">0</span><span class="p">],]</span><span class="o">*</span><span class="mi">10</span>
+</pre></div>
+</div>
+</p></li>
+<li><p><strong>vrtol</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><em>float</em></a><em>, </em><em>optional</em>) – The threshold of convergence in variational compression. Default is
+<span class="math notranslate nohighlight">\(10^{-5}\)</span>.</p></li>
+<li><p><strong>vguess_m</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.9)"><em>tuple</em></a><em>(</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><em>int</em></a><em>)</em><em>, </em><em>optional</em>) – The bond dimension of <code class="docutils literal notranslate"><span class="pre">compressed_mpo</span></code> and <code class="docutils literal notranslate"><span class="pre">compressed_mps</span></code> to construct the initial guess
+<code class="docutils literal notranslate"><span class="pre">compressed_mpo</span> <span class="pre">&#64;</span> <span class="pre">compressed_mps</span></code> in <a class="reference internal" href="mps.html#renormalizer.mps.mp.MatrixProduct.variational_compress" title="renormalizer.mps.mp.MatrixProduct.variational_compress"><code class="xref any py py-meth docutils literal notranslate"><span class="pre">MatrixProduct.variational_compress</span></code></a>.
+The default is (5,5).</p></li>
+<li><p><strong>dump_matrix_size</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><em>int</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><em>float</em></a><em>, </em><em>optional</em>) – <p>The total bytes threshold for dumping matrix into disks. Every local site matrix in the MPS/MPO
+with a size larger than the specified size will be moved from memory to the disk at <code class="docutils literal notranslate"><span class="pre">dump_matrix_dir</span></code>.
+The matrix will be moved back to memory upon access.
+The dumped matrices on the disks will be removed once the MPS/MPO is garbage-collected.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">dump_matrix_size</span></code> is set and the program exits abnormally, it is possible that the dumped matrices
+are not deleted automatically. A common case when this can happen is that the program is killed by a signal.
+In such cases it is recommended to check and clean <code class="docutils literal notranslate"><span class="pre">dump_matrix_dir</span></code> after the exit of the program
+since the dumped matrices may take a lot of disk space.</p>
+</div>
+</p></li>
+<li><p><strong>dump_matrix_dir</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a><em>, </em><em>optional</em>) – The directory to dump matrix when matrix is larger than <code class="docutils literal notranslate"><span class="pre">dump_matrix_size</span></code>.</p></li>
+</ul>
+</dd>
+</dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><a class="reference internal" href="#renormalizer.utils.configs.CompressCriteria" title="renormalizer.utils.configs.CompressCriteria"><code class="xref py py-obj docutils literal notranslate"><span class="pre">CompressCriteria</span></code></a></dt><dd><p>Compression criteria</p>
+</dd>
+<dt><a class="reference internal" href="mps.html#renormalizer.mps.mp.MatrixProduct.variational_compress" title="renormalizer.mps.mp.MatrixProduct.variational_compress"><code class="xref py py-obj docutils literal notranslate"><span class="pre">renormalizer.mps.mp.MatrixProduct.variational_compress</span></code></a></dt><dd><p>Variational compression</p>
+</dd>
+<dt><a class="reference internal" href="mps.html#renormalizer.mps.Mpo.contract" title="renormalizer.mps.Mpo.contract"><code class="xref py py-obj docutils literal notranslate"><span class="pre">renormalizer.mps.Mpo.contract</span></code></a></dt><dd><p>compress <code class="docutils literal notranslate"><span class="pre">mpo</span> <span class="pre">&#64;</span> <span class="pre">mps/mpdm/mpo</span></code></p>
+</dd>
+</dl>
+</div>
+<dl class="py method">
+<dt id="renormalizer.utils.configs.CompressConfig.bonddim_should_set">
+<em class="property">property </em><code class="sig-name descname">bonddim_should_set</code><a class="headerlink" href="#renormalizer.utils.configs.CompressConfig.bonddim_should_set" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="renormalizer.utils.configs.CompressConfig.compute_m_trunc">
+<code class="sig-name descname">compute_m_trunc</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">sigma</span><span class="p">:</span> <span class="n">numpy.ndarray</span></em>, <em class="sig-param"><span class="n">idx</span><span class="p">:</span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)">int</a></span></em>, <em class="sig-param"><span class="n">left</span><span class="p">:</span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)">bool</a></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)">int</a><a class="reference internal" href="_modules/renormalizer/utils/configs.html#CompressConfig.compute_m_trunc"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#renormalizer.utils.configs.CompressConfig.compute_m_trunc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="renormalizer.utils.configs.CompressConfig.copy">
+<code class="sig-name descname">copy</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="#renormalizer.utils.configs.CompressConfig" title="renormalizer.utils.configs.CompressConfig">renormalizer.utils.configs.CompressConfig</a><a class="reference internal" href="_modules/renormalizer/utils/configs.html#CompressConfig.copy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#renormalizer.utils.configs.CompressConfig.copy" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="renormalizer.utils.configs.CompressConfig.relax">
+<code class="sig-name descname">relax</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/renormalizer/utils/configs.html#CompressConfig.relax"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#renormalizer.utils.configs.CompressConfig.relax" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="renormalizer.utils.configs.CompressConfig.set_bonddim">
+<code class="sig-name descname">set_bonddim</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">length</span></em>, <em class="sig-param"><span class="n">max_value</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/renormalizer/utils/configs.html#CompressConfig.set_bonddim"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#renormalizer.utils.configs.CompressConfig.set_bonddim" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="renormalizer.utils.configs.CompressConfig.threshold">
+<em class="property">property </em><code class="sig-name descname">threshold</code><a class="headerlink" href="#renormalizer.utils.configs.CompressConfig.threshold" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="renormalizer.utils.configs.CompressConfig.update">
+<code class="sig-name descname">update</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">other</span><span class="p">:</span> <span class="n"><a class="reference internal" href="#renormalizer.utils.configs.CompressConfig" title="renormalizer.utils.configs.CompressConfig">renormalizer.utils.configs.CompressConfig</a></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/renormalizer/utils/configs.html#CompressConfig.update"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#renormalizer.utils.configs.CompressConfig.update" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="renormalizer.utils.configs.CompressCriteria">
+<em class="property">class </em><code class="sig-prename descclassname">renormalizer.utils.configs.</code><code class="sig-name descname">CompressCriteria</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/renormalizer/utils/configs.html#CompressCriteria"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#renormalizer.utils.configs.CompressCriteria" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/enum.html#enum.Enum" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">enum.Enum</span></code></a></p>
+<p>Criteria for compression.</p>
+<dl class="py attribute">
+<dt id="renormalizer.utils.configs.CompressCriteria.both">
+<code class="sig-name descname">both</code><em class="property"> = 'both'</em><a class="headerlink" href="#renormalizer.utils.configs.CompressCriteria.both" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compress combining <code class="docutils literal notranslate"><span class="pre">threshold</span></code> and <code class="docutils literal notranslate"><span class="pre">fixed</span></code>. The bond dimension for the two criteria are both
+calculated and the smaller one is used.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="renormalizer.utils.configs.CompressCriteria.fixed">
+<code class="sig-name descname">fixed</code><em class="property"> = 'fixed'</em><a class="headerlink" href="#renormalizer.utils.configs.CompressCriteria.fixed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compress depending on pre-set fixed bond dimension.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="renormalizer.utils.configs.CompressCriteria.threshold">
+<code class="sig-name descname">threshold</code><em class="property"> = 'threshold'</em><a class="headerlink" href="#renormalizer.utils.configs.CompressCriteria.threshold" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compress depending on pre-set threshold.
+States with singular value smaller than the threshold are discarded.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="renormalizer.utils.configs.EvolveConfig">
+<em class="property">class </em><code class="sig-prename descclassname">renormalizer.utils.configs.</code><code class="sig-name descname">EvolveConfig</code><span class="sig-paren">(</span><em class="sig-param">method: renormalizer.utils.configs.EvolveMethod = &lt;EvolveMethod.prop_and_compress: 'P&amp;C'&gt;</em>, <em class="sig-param">adaptive=False</em>, <em class="sig-param">guess_dt=0.1</em>, <em class="sig-param">adaptive_rtol=0.0005</em>, <em class="sig-param">reg_epsilon=1e-10</em>, <em class="sig-param">ivp_rtol=1e-05</em>, <em class="sig-param">ivp_atol=1e-08</em>, <em class="sig-param">force_ovlp=True</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/renormalizer/utils/configs.html#EvolveConfig"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#renormalizer.utils.configs.EvolveConfig" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<dl class="py method">
+<dt id="renormalizer.utils.configs.EvolveConfig.adaptive">
+<em class="property">property </em><code class="sig-name descname">adaptive</code><a class="headerlink" href="#renormalizer.utils.configs.EvolveConfig.adaptive" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="renormalizer.utils.configs.EvolveConfig.check_valid_dt">
+<code class="sig-name descname">check_valid_dt</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">evolve_dt</span><span class="p">:</span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#complex" title="(in Python v3.9)">complex</a></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/renormalizer/utils/configs.html#EvolveConfig.check_valid_dt"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#renormalizer.utils.configs.EvolveConfig.check_valid_dt" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="renormalizer.utils.configs.EvolveConfig.copy">
+<code class="sig-name descname">copy</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/renormalizer/utils/configs.html#EvolveConfig.copy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#renormalizer.utils.configs.EvolveConfig.copy" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="renormalizer.utils.configs.EvolveConfig.is_tdvp">
+<em class="property">property </em><code class="sig-name descname">is_tdvp</code><a class="headerlink" href="#renormalizer.utils.configs.EvolveConfig.is_tdvp" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="renormalizer.utils.configs.EvolveMethod">
+<em class="property">class </em><code class="sig-prename descclassname">renormalizer.utils.configs.</code><code class="sig-name descname">EvolveMethod</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/renormalizer/utils/configs.html#EvolveMethod"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#renormalizer.utils.configs.EvolveMethod" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/enum.html#enum.Enum" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">enum.Enum</span></code></a></p>
+<p>Time evolution methods.</p>
+<dl class="py attribute">
+<dt id="renormalizer.utils.configs.EvolveMethod.prop_and_compress">
+<code class="sig-name descname">prop_and_compress</code><em class="property"> = 'P&amp;C'</em><a class="headerlink" href="#renormalizer.utils.configs.EvolveMethod.prop_and_compress" title="Permalink to this definition">¶</a></dt>
+<dd><p>propagation and compression with RK45 propagator</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="renormalizer.utils.configs.EvolveMethod.tdvp_mu_cmf">
+<code class="sig-name descname">tdvp_mu_cmf</code><em class="property"> = 'TDVP Matrix Unfolding Constant Mean Field'</em><a class="headerlink" href="#renormalizer.utils.configs.EvolveMethod.tdvp_mu_cmf" title="Permalink to this definition">¶</a></dt>
+<dd><p>TDVP with constant mean field (CMF) and matrix unfolding (MU) regularization</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="renormalizer.utils.configs.EvolveMethod.tdvp_mu_vmf">
+<code class="sig-name descname">tdvp_mu_vmf</code><em class="property"> = 'TDVP Matrix Unfolding Variable Mean Field'</em><a class="headerlink" href="#renormalizer.utils.configs.EvolveMethod.tdvp_mu_vmf" title="Permalink to this definition">¶</a></dt>
+<dd><p>TDVP with variable mean field (VMF) and matrix unfolding (MU) regularization</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="renormalizer.utils.configs.EvolveMethod.tdvp_ps">
+<code class="sig-name descname">tdvp_ps</code><em class="property"> = 'TDVP_PS'</em><a class="headerlink" href="#renormalizer.utils.configs.EvolveMethod.tdvp_ps" title="Permalink to this definition">¶</a></dt>
+<dd><p>TDVP with projector splitting</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="renormalizer.utils.configs.EvolveMethod.tdvp_vmf">
+<code class="sig-name descname">tdvp_vmf</code><em class="property"> = 'TDVP Variable Mean Field'</em><a class="headerlink" href="#renormalizer.utils.configs.EvolveMethod.tdvp_vmf" title="Permalink to this definition">¶</a></dt>
+<dd><p>TDVP with variable mean field (VMF)</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="renormalizer.utils.configs.OptimizeConfig">
+<em class="property">class </em><code class="sig-prename descclassname">renormalizer.utils.configs.</code><code class="sig-name descname">OptimizeConfig</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">procedure</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/renormalizer/utils/configs.html#OptimizeConfig"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#renormalizer.utils.configs.OptimizeConfig" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>DMRG ground state algorithm optimization configuration</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="renormalizer.utils.configs.parse_memory_limit">
+<code class="sig-prename descclassname">renormalizer.utils.configs.</code><code class="sig-name descname">parse_memory_limit</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)">float</a><a class="reference internal" href="_modules/renormalizer/utils/configs.html#parse_memory_limit"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#renormalizer.utils.configs.parse_memory_limit" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="lib.html" class="btn btn-neutral float-right" title="12. lib" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="cv.html" class="btn btn-neutral float-left" title="10. Frequency domain DMRG" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Shuaigroup
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
